@@ -1,0 +1,9 @@
+digraph s {
+    rankdir=LR;
+    
+    node[shape="record",fontname="Consolas,Monaca", fontsize="14pt"];
+    node_array[label="{<d0>A|<d1>_|<d2>B|<d3>_|<d4>_|<d5>C}"];
+    
+    "pre" -> node_array:d4;
+    "i" -> node_array:d4;
+}
