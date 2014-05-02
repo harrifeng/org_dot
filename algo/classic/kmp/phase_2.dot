@@ -13,7 +13,7 @@ digraph g {
     <TD PORT="f7">D</TD>
     <TD PORT="f8">A</TD>
     <TD PORT="f9">B</TD>
-    <TD PORT="f10" bgcolor="red">#</TD>
+    <TD PORT="f10">#</TD>
     <TD PORT="f11">A</TD>
     <TD PORT="f12">B</TD>
     <TD PORT="f13">C</TD>
