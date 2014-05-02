@@ -1,0 +1,70 @@
+digraph g {
+    node [fontname="Monaco, Consolas",shape =plaintext,height=.1];
+    node_s [label = <
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+    <TR>
+    <TD PORT="f0">pattern</TD>
+    <TD PORT="f1"> </TD>
+    <TD PORT="f2" bgcolor="green">a</TD>
+    <TD PORT="f3" bgcolor="green">b</TD>
+    <TD PORT="f4" bgcolor="blue">a</TD>  
+    <TD PORT="f5" bgcolor="blue">b</TD>
+    <TD PORT="f6" bgcolor="blue">a</TD>
+    <TD PORT="f7" bgcolor="blue">b</TD>
+    <TD PORT="f8" bgcolor="SpringGreen">a</TD>
+    <TD PORT="f9" bgcolor="SpringGreen">b</TD>
+    <TD PORT="f10">c</TD>
+    <TD PORT="f11">a</TD>
+    </TR>
+    <TR>
+    <TD PORT="f20">index</TD>
+    <TD PORT="f21">-1</TD>
+    <TD PORT="f22">0</TD>
+    <TD PORT="f23">1</TD>
+    <TD PORT="f24">2</TD>  
+    <TD PORT="f25">3</TD>
+    <TD PORT="f26">4</TD>
+    <TD PORT="f27">5</TD>
+    <TD PORT="f28">6</TD>
+    <TD PORT="f29">7</TD>
+    <TD PORT="f30">8</TD>
+    <TD PORT="f31">9</TD>
+    </TR>
+    <TR>
+    <TD PORT="f40">pre[]</TD>
+    <TD PORT="f41">-1</TD>
+    <TD PORT="f42">-1</TD>
+    <TD PORT="f43">-1</TD>
+    <TD PORT="f44" bgcolor="yellow"> 0</TD>  
+    <TD PORT="f45" bgcolor="yellow"> 1</TD>
+    <TD PORT="f46" bgcolor="yellow"> 2</TD>
+    <TD PORT="f47" bgcolor="yellow"> 3</TD>
+    <TD PORT="f48" bgcolor="yellow"> 4</TD>
+    <TD PORT="f49" bgcolor="yellow"> 5</TD>
+    <TD PORT="f50">-1</TD>
+    <TD PORT="f51">-1</TD>
+    </TR>       
+    
+    </TABLE>>];
+
+    node_pk [label = <
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+    <TR>
+    <TD PORT="f0">k</TD>
+    <TD PORT="f1">k+1</TD>    
+    </TR>
+    </TABLE>>];
+
+
+    node_pi [label = <
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+    <TR>
+    <TD PORT="f0">i</TD>
+    </TR>
+    </TABLE>>];
+    
+    
+    node_pk:f0 -> node_s:f6
+    node_pk:f1 -> node_s:f7
+    node_pi:f0 -> node_s:f9
+}
