@@ -1,0 +1,40 @@
+digraph structs {
+    splines=false;
+    node[shape=plaintext];
+
+    struct_c[label=<
+             <table border="1" cellborder="0" cellspacing="0" cellpadding="5" >
+             <tr><td port="f0"  bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f1"  bgcolor="#DEE6CC" align="right">close </td></tr>
+             <tr><td port="f2"  bgcolor="#F2F6EB" align="right">(active close) </td></tr>
+             <tr><td port="f3"  bgcolor="#DEE6CC" align="right"> </td></tr>
+             <tr><td port="f4"  bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f5"  bgcolor="#DEE6CC" align="right"> </td></tr>
+             <tr><td port="f6"  bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f7"  bgcolor="#DEE6CC" align="right"> </td></tr>
+             <tr><td port="f10" bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f11" bgcolor="#FCD975"> Client Side </td></tr>
+             </table>
+             >];
+    struct_s[label=<
+             <table border="1" cellborder="0" cellspacing="0" cellpadding="5" >
+             <tr><td port="f0"  bgcolor="#F2F6EB"> </td></tr>
+             <tr><td port="f1"  bgcolor="#DEE6CC" align="left">(passive close) </td></tr>
+             <tr><td port="f2"  bgcolor="#F2F6EB" align="left"> read returns 0</td></tr>
+             <tr><td port="f3"  bgcolor="#DEE6CC" align="left"> close</td></tr>
+             <tr><td port="f4"  bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f5"  bgcolor="#DEE6CC" align="left"> </td></tr>
+             <tr><td port="f6"  bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f9"  bgcolor="#DEE6CC" align="left"> </td></tr>
+             <tr><td port="f10" bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f11" bgcolor="#9ACEEB" > Serve Side </td></tr>
+             </table>
+             >];
+    struct_c:f1 -> struct_s:f2[label="         FIN M                            "]; 
+    struct_s:f2 -> struct_c:f3[xlabel="ACK M+1"];                            
+    struct_s:f3 -> struct_c:f4[label="                            FIN N         "]; 
+    struct_c:f4 -> struct_s:f5[xlabel="         ACK N+1                          "]; 
+
+    {rank=same struct_c struct_s}
+
+}

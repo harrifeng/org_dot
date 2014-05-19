@@ -1,0 +1,83 @@
+digraph structs {
+    splines=false;
+    node[shape="plaintext"];
+
+    struct_c[label=<
+             <table border="1" cellborder="0" cellspacing="0" cellpadding="5" >
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="right">bind</td></tr>
+             <tr><td port="f0001" bgcolor="#F2F6EB" align="right">connect(blocks)</td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="right">SYN_SENT(active open) </td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="right"> </td></tr>
+             <tr><td port="f0002" bgcolor="#F2F6EB" align="right"> ESTABLISH</td></tr>
+             <tr><td port="f0003" bgcolor="#DEE6CC" align="right"> connect returns</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="right"> </td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f0004" bgcolor="#DEE6CC" align="right"> write</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> read(blocks)</td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="right"> </td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="right"> </td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f0005" bgcolor="#DEE6CC" align="right"> read returns</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f0006" bgcolor="#DEE6CC" align="right"> close</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> (active close)FIN_WAIT_1</td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="right"> </td></tr>             
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> </td></tr>             
+             <tr><td port="f0007" bgcolor="#DEE6CC" align="right"> FIN_WAIT_2</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> </td></tr>
+             <tr><td port="f0008" bgcolor="#DEE6CC" align="right"> TIME_WAIT</td></tr>
+             <tr><td port="f0009" bgcolor="#F2F6EB" align="right"> </td></tr>             
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="right"> </td></tr>
+             <tr><td port="f0000" bgcolor="#FCD975" > Client Side </td></tr>
+             </table>
+             >];
+
+     struct_s[label=<
+             <table border="1" cellborder="0" cellspacing="0" cellpadding="5" >
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="left">socket,bind,listen</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left">LISTEN(passive open)</td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="left">accept(blocks)</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f0001" bgcolor="#DEE6CC" align="left">SYN_RCVD </td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="left"> </td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left"> </td></tr>             
+             <tr><td port="f0002" bgcolor="#DEE6CC" align="left">ESTABLISHED</td></tr>             
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left">accept returns</td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="left">read(blocks)</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f0003" bgcolor="#DEE6CC" align="left"> read returns</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f0004" bgcolor="#DEE6CC" align="left"> write</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left"> read(blocks)</td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="left"> </td></tr>
+             <tr><td port="f0005" bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="left"> </td></tr>
+             <tr><td port="f0006" bgcolor="#F2F6EB" align="left"> CLOSE_WAIT(passive close)</td></tr>
+             <tr><td port="f0007" bgcolor="#DEE6CC" align="left"> read returns 0</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f0008" bgcolor="#DEE6CC" align="left"> close</td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left"> LAST_ACK</td></tr>             
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="left"> </td></tr>
+             <tr><td port="f0000" bgcolor="#F2F6EB" align="left"> </td></tr>
+             <tr><td port="f0009" bgcolor="#DEE6CC" align="left"> CLOSED</td></tr>
+             <tr><td port="f0000" bgcolor="#9ACEEB" > Serve Side </td></tr>
+             </table>
+             >];
+    struct_c:f0001 -> struct_s:f0001[label="  SYN J, MSS=536                        "];
+    struct_s:f0001 -> struct_c:f0002[label="  SYN K, ACK J+1, MSS=1460              "];
+    struct_c:f0003 -> struct_s:f0002[label="  ACK K+1                               "];
+    struct_c:f0004 -> struct_s:f0003[label="  data(request)                         "];
+    struct_s:f0004 -> struct_c:f0005[label="               data(reply), ACK requst  "];
+    struct_c:f0005 -> struct_s:f0005[label="               ACK reply                "];
+    struct_c:f0006 -> struct_s:f0006[label="               FIN M                    "];
+    struct_s:f0007 -> struct_c:f0007[label="               ACK M+1                  "];
+    struct_s:f0008 -> struct_c:f0008[label="               FIN N                    "];
+    struct_c:f0009 -> struct_s:f0009[label="               ACK N+1                  "];                            
+    
+             
+    {rank=same struct_c struct_s}
+}
