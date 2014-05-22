@@ -1,0 +1,58 @@
+digraph foo {
+    rankdir=BT
+    node[shape="plaintext",fontsize="12",fontname="Tahoma"]
+
+    node_inst[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+              <TR><TD bgcolor="#FCD975" width="32" >IP Protocol</TD></TR>
+              <TR><TD bgcolor="#9ACEEB" width="32" >TCP Protocol</TD></TR>
+              <TR><TD bgcolor="#EE7942" width="32" >HTTP Protocol</TD></TR>
+              </table>>];
+
+
+    node_ipv4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+              <TR>
+              <TD bgcolor="#FCD975" width="32" >Version</TD>
+              <TD bgcolor="#FCD975" width="32" >Hdr Len</TD>
+              <TD bgcolor="#FCD975" colspan="2" width="32">Type of service</TD>
+              <TD bgcolor="#FCD975" colspan="4">Total Datagram Len</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#FCD975" colspan="4" >Packet ID</TD>
+              <TD bgcolor="#FCD975" >Flags</TD>
+              <TD bgcolor="#FCD975" colspan="3" width="64" >Fragmentation offset</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#FCD975" colspan="2" width="32" >TTL</TD>
+              <TD bgcolor="#FCD975" colspan="2" width="32" >Upp Protocol</TD>
+              <TD bgcolor="#FCD975" colspan="4" >Header Checksum</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#FCD975" colspan="8" >Source IP address</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#FCD975" colspan="8" >Destination IP address</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#9ACEEB" colspan="4" >Source port</TD>
+              <TD bgcolor="#9ACEEB" colspan="4" >Destination port</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#9ACEEB" colspan="8" >TCP sequence number</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#9ACEEB" colspan="8" >Plggybacked acknowledgment</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#9ACEEB" colspan="4" >Misc flags</TD>
+              <TD bgcolor="#9ACEEB" colspan="4" >Windows Size</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#9ACEEB" colspan="4" >TCP checksum</TD>
+              <TD bgcolor="#9ACEEB" colspan="4" >Urgent pointer</TD>
+              </TR>
+              <TR>
+              <TD bgcolor="#EE7942" colspan="8" rowspan="2" height="32"> GET /index.html HTTP/1.1[CR][LF]Host:www.g.cn
+              </TD>
+              </TR>
+              </table>>];
+}

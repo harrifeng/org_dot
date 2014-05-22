@@ -1,0 +1,69 @@
+digraph foo {
+    rankdir=BT
+    node[shape="plaintext",fontsize="7",fontname="Monaco, Consolas"]
+    subgraph cluster_ipv4 {
+        label="ipv4";
+        style="dashed";
+        node_ipv4[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                  <TR><TD>length</TD><TD  >AF_NET</TD></TR>
+                  <TR><TD colspan="2" >16-bit port</TD></TR>
+                  <TR>
+                  <TD colspan="2" height="32">32-bit<br /> IPv4 address</TD>
+                  </TR>
+                  <TR ><TD colspan="2" height="64" bgcolor="grey">Unused</TD></TR>
+                  </table>>];
+
+}
+
+subgraph cluster_ipv6 {
+    label="ipv6";
+    style="dashed";
+    node_ipv6[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+              <TR><TD>length</TD><TD >AF_NET6</TD></TR>
+              <TR><TD colspan="2" >16-bit port</TD></TR>
+              <TR>
+              <TD colspan="2" height="32">32-bit<br /> flow label</TD>
+              </TR>
+              <TR>
+              <TD colspan="2" height="128">128-bit<br /> IPv6 address</TD>
+              </TR>
+              <TR ><TD colspan="2" height="32">32-bit <br /> scope ID</TD></TR>
+              </table>>];
+
+}
+
+subgraph cluster_unix {
+    label="Unix";
+    style="dashed";
+    node_unix[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+              <TR><TD>length</TD><TD >AF_LOCAL</TD></TR>
+              <TR>
+              <TD colspan="2" height="300">upt to 104 Bytes<br /> pathname</TD>
+              </TR>
+              </table>>];
+
+}
+subgraph cluster_dl {
+    label="Datalink";
+    style="dashed";
+    node_dl[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+            <TR><TD>length</TD><TD >AF_LINK</TD></TR>
+            <TR><TD colspan="2" >interf index</TD></TR>
+            <TR><TD>type</TD><TD >name len</TD></TR>
+            <TR><TD>addr len</TD><TD >sel len</TD></TR>
+            <TR>
+            <TD colspan="2" height="200">32-bit<br /> Interface name <br/> link-layer addr</TD>
+            </TR>
+            </table>>];
+        }
+
+        subgraph cluster_storage {
+            label="Storage";
+            style="dashed";
+            node_storage[label=<<table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+                         <TR><TD>length</TD><TD >AF_XXX</TD></TR>
+                         <TR ><TD colspan="2" height="360" bgcolor="grey">(opaque) <br /> longest on system</TD></TR>
+                         </table>>];
+
+}
+}
