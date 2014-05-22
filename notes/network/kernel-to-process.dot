@@ -1,0 +1,28 @@
+digraph foo {
+   node [shape="record",fontname="Monaco, Consolas"];
+
+   subgraph cluster_core {
+   bgcolor="grey";
+   label="user process";
+   node[shape="rect",width=2]
+   node_a[pos="0,0",label = "length(int *)"]
+   node_b[pos="0,1",label = "socket\naddress\nsructure"]
+
+   }
+
+subgraph cluster_fsys {
+    rankdir="RL"
+    label   = "Kernel";
+    bgcolor = "white";
+    node [shape="none"]
+    node_1 [pos="0,0", pin=true,label="",width=0.3];
+    node_2 [label="", width=0.8];
+    node_3 [label="", width=2];
+    rankdir=LR;
+
+}
+
+  node_a->node_1[label="value"];
+  node_2->node_a[label="result"];
+  node_b->node_3[label=" protocol address"];
+}

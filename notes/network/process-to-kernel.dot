@@ -1,0 +1,20 @@
+digraph foo {
+   subgraph cluster_core {
+   bgcolor="grey";
+   label="user process";
+   node[shape="rect",fontname="Monaco, Consolas"];
+   node_a[label = "length(int)"]
+   node_b[label = "socket\naddress\nsructure"]
+   }
+
+   subgraph cluster_kernel {
+   bgcolor="white";
+   label="Kernel";
+   node[shape="none",width=2]
+   node_c[label = ""]
+   node_d[label = ""]
+   }
+
+   node_a->node_c[label=" value"]
+   node_b->node_d[label=" protocol address"]
+}
