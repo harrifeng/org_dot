@@ -1,0 +1,14 @@
+digraph s {
+    rankdir = BT
+    edge[arrowhead=empty];
+    node[shape="record", fontname="Verdana, Monaco,Consolas", style="filled", fontcolor="white", color="black"];
+
+    node_action[label="ActionController::Base", fillcolor="purple"];
+    node_base[label="ApplicationController", fillcolor="red"];
+    node_user[label="UsersController", fillcolor="blue"];
+    node_micropost[label="MicropostsController", fillcolor="orange"];
+
+    node_base -> node_action
+    node_user -> node_base
+    node_micropost -> node_base
+}

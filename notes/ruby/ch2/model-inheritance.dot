@@ -1,0 +1,12 @@
+digraph s {
+    rankdir = BT
+    edge[arrowhead=empty];    
+    node[shape="record", fontname="Verdana, Monaco,Consolas", style="filled", fontcolor="white", color="black"];
+    
+    node_base[label="ActiveRecord::Base", fillcolor="red"];
+    node_user[label="User", fillcolor="blue"];
+    node_micropost[label="Micropost", fillcolor="orange"];
+
+    node_user -> node_base
+    node_micropost -> node_base
+}
