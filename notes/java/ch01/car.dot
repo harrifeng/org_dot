@@ -1,0 +1,9 @@
+digraph s {
+    edge[arrowtail="diamond"]
+    node[shape="record", fontname="Consolas,Monaco"];
+
+    node_car[label="Car"];
+    node_engine[label="Engine"];
+
+    node_car->node_engine[label="   ",constraint=false,dir=back ];
+}
