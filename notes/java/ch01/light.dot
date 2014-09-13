@@ -1,0 +1,4 @@
+digraph s {
+    node[shape="record", fontname="Consolas, Monaco"];
+    node_light[label="{Light|on()\loff()\lbrighten()\ldim()\l}"];
+}
