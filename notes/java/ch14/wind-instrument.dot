@@ -1,0 +1,10 @@
+digraph s {
+    rankdir=BT;
+    edge[arrowhead=empty]
+    node[shape="record", fontname="Consolas,Monaco"];
+
+    node_instrument[label="Instrument"];
+    node_wind      [label="Wind"];
+
+    node_wind->node_instrument[label="   "];
+}
