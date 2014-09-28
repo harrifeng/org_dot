@@ -1,0 +1,19 @@
+digraph s {
+    rankdir=LR
+    label="Is-like-a relationship"
+    node[fontname="Consolas,Monaca",fontsize="12"]
+    node_left[shape="record",label="Talks to Useful object"];
+    node_right[shape="plaintext",
+               label=<
+               <table border="0" cellborder="1" cellspacing="0" cellpadding="5" >
+               <tr>
+               <td port="f1">Useful part</td>
+               </tr>
+               <tr>
+               <td bgcolor="grey">MoreUseful part</td>
+               </tr>
+               </table>>];
+
+               // label="{Useful part| MoreUse part}"];
+    node_left->node_right:f1[style=dashed, label="Message"];
+}

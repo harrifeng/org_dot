@@ -1,0 +1,8 @@
+digraph s {
+    rankdir=LR
+    label="Is-a relationship"
+    node[shape="record",fontname="Consolas,Monaca",fontsize="12"]
+    node_left[label="Talks to Shape"];
+    node_right[label="Circle,Square\nLine, or new type\nof Shape"];
+    node_left->node_right[style=dashed, label="Message"];
+}

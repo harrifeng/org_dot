@@ -1,0 +1,11 @@
+digraph s {
+    rankdir = BT
+    node[shape="record",fontname="Consolas,Monaco"];
+    edge[arrowhead=empty];
+
+    node_useful[label="{Useful|void f()\l|void g()\l}"];
+    node_moreuseful[label="{MoreUseful|void f()\lvoid g()\l|void u()\lvoid v()\lvoid w()\l}"];
+
+    node_moreuseful->node_useful
+}
+
