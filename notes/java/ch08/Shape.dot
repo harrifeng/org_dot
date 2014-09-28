@@ -1,0 +1,15 @@
+digraph s {
+    rankdir = BT
+    node[shape="record",fontname="Consolas,Monaco"];
+    edge[arrowhead=empty];
+
+    node_shape[label="{Shape|draw()\lerase()\l}"];
+
+    node_circle[label="{Circle|draw()\lerase()\l}"];
+    node_square[label="{Square|draw()\lerase()\l}"];
+    node_triangle[label="{Triangle|draw()\lerase()\l}"];
+
+    node_circle->node_shape;
+    node_square->node_shape;
+    node_triangle->node_shape;
+}
