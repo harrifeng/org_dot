@@ -1,0 +1,17 @@
+digraph s {
+    splines=line;
+    rankdir=BT
+    edge[arrowhead=empty]
+    node[shape="record", fontname="Consolas,Monaco"];
+    node_abs[label="Abstract or Concrete\l Base class"];
+    node_in1[style="dashed", label="Interface 1"];
+    node_in2[style="dashed", label="Interface 2"];
+    node_in3[style="dashed", label="Interface n"];
+
+
+    node_base[label="{{<f0> Base Class Method |<f1>Interface 1  | <f2>Interface 2 |...| <f3>Interface n}}"];
+    node_base:f0->node_abs;
+    node_base:f1->node_in1[style="dashed"];
+    node_base:f2->node_in2[style="dashed"];
+    node_base:f3->node_in3[style="dashed"];
+}
