@@ -1,0 +1,23 @@
+digraph s {
+    rankdir=bt
+    node[shape="record",fontname="consolas,monaca",fontsize="10"];
+    edge[arrowhead=empty];
+
+    node_map[label="\<\<Interface\>\>\lMap"];
+    node_sortedmap[label="\<\<Interface\>\>\lSortedMap"];
+    node_navigablemap[label="\<\<Interface\>\>\lNavigableMap"];
+
+    node_linkedhashmap[label="LinkedHashMap"];
+    node_hashmap[label="HashMap"];
+    node_hashtable[label="HashTable"];
+    node_treemap[label="TreeMap"];
+
+    node_hashtable -> node_map[style="dashed"];
+
+    node_hashmap -> node_map[style="dashed"];
+    node_linkedhashmap -> node_hashmap;
+
+    node_sortedmap -> node_map;
+    node_navigablemap -> node_sortedmap;
+    node_treemap -> node_navigablemap;
+}

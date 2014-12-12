@@ -1,0 +1,38 @@
+digraph s {
+    rankdir=bt
+    node[shape="record",fontname="consolas,monaca",fontsize="10"];
+    edge[arrowhead=empty];
+
+    node_collection[label="\<\<Interface\>\>\lCollection"];
+    node_set[label="\<\<Interface\>\>\lSet"];
+    node_list[label="\<\<Interface\>\>\lList"];
+    node_queue[label="\<\<Interface\>\>\lQueue"];
+    node_sortedset[label="\<\<Interface\>\>\lSortedset"];
+    node_navigableset[label="\<\<Interface\>\>\lNavigableset"];
+
+    node_hashset[label="HashSet"];
+    node_linkedhashset[label="LinkedHashSet"];
+    node_treeset[label="TreeSet"];
+    node_arraylist[label="ArrayList"];
+    node_vector[label="Vector"];
+    node_linkedlist[label="LinkedList"];
+    node_priorityqueue[label="PriorityQueue"];
+
+    node_set -> node_collection;
+    node_hashset -> node_set;
+    node_linkedhashset->node_hashset;
+
+    node_sortedset -> node_set;
+    node_navigableset -> node_sortedset;
+    node_treeset -> node_navigableset;
+
+    node_list -> node_collection;
+
+    node_arraylist -> node_list[style="dashed"];
+    node_vector -> node_list[style="dashed"];
+    node_linkedlist -> node_list[style="dashed"];
+    node_linkedlist -> node_queue[style="dashed"];
+    node_priorityqueue -> node_queue[style="dashed"];
+    node_queue -> node_collection;
+
+}
