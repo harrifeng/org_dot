@@ -1,10 +1,10 @@
 digraph structs {
     splines=false;
-    node[shape="plaintext"];
+    node[shape="plaintext", fontname="Consolas,Monaco"];
 
     struct_c[label=<
              <table border="1" cellborder="0" cellspacing="0" cellpadding="5" >
-             <tr><td port="f0000" bgcolor="#DEE6CC" align="right">bind</td></tr>
+             <tr><td port="f0000" bgcolor="#DEE6CC" align="right">socket</td></tr>
              <tr><td port="f0001" bgcolor="#F2F6EB" align="right">connect(blocks)</td></tr>
              <tr><td port="f0000" bgcolor="#DEE6CC" align="right">SYN_SENT(active open) </td></tr>
              <tr><td port="f0000" bgcolor="#F2F6EB" align="right"> </td></tr>
